@@ -119,7 +119,13 @@
                             <constraint firstItem="Fr7-Rk-jyR" firstAttribute="trailing" secondItem="OjN-bb-PIe" secondAttribute="trailing" id="weB-2u-An0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Natife Test" id="wBl-1z-9X3"/>
+                    <navigationItem key="navigationItem" title="Natife Test" id="wBl-1z-9X3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="dL9-h3-wqr">
+                            <connections>
+                                <action selector="sortPressed:" destination="kci-ey-b6L" id="WEf-gA-Pq7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Fr7-Rk-jyR" id="bvx-kq-HDN"/>
                     </connections>
