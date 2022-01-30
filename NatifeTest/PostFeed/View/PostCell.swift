@@ -14,23 +14,11 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func configure(with post: PostData) {
+    func configure(with post: PostModel) {
         self.titleLabel.text = post.title
         self.previewTextLabel.text = post.previewText
         self.likesCountLabel.text = String(post.likesCount)
-        self.dateLabel.text = timeshampToDateString(timeshamp: post.timeshamp)
-    }
-    
-    fileprivate func timeshampToDateString(timeshamp: Int) -> String {
-        
-        let date = Date(timeIntervalSince1970: Double(timeshamp))
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+2")
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "HH:mm  MM/dd/yyyy"
-        let strDate = dateFormatter.string(from: date)
-        
-        return strDate
+        self.dateLabel.text = post.timeshamp.timeshampToDateString()
     }
 }
 

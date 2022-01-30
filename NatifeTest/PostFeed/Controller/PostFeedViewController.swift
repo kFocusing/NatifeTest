@@ -11,7 +11,7 @@ class PostFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [PostData]()
+    var posts = [PostModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PostFeedViewController: UIViewController {
         }
     }
     
-    private func updatePosts(posts: [PostData]) {
+    private func updatePosts(posts: [PostModel]) {
         DispatchQueue.main.async {
             self.posts = posts
             self.tableView.reloadData()
@@ -66,3 +66,5 @@ extension PostFeedViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "postDetailSegue", sender: nil)
     }
 }
+
+
