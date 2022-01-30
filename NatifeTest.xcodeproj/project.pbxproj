@@ -16,6 +16,7 @@
 		C7783BC527A56F70008D364F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7783BC427A56F70008D364F /* Assets.xcassets */; };
 		C7783BC827A56F70008D364F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7783BC627A56F70008D364F /* LaunchScreen.storyboard */; };
 		C7783BE227A574C9008D364F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7783BE127A574C9008D364F /* PostModel.swift */; };
+		C7A1809E27A6E273004B83CD /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C7783BC727A56F70008D364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7783BC927A56F70008D364F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7783BE127A574C9008D364F /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				C7770D1327A58DF0002D3552 /* PostFeedViewController.swift */,
+				C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7783BE227A574C9008D364F /* PostModel.swift in Sources */,
+				C7A1809E27A6E273004B83CD /* PostDetailViewController.swift in Sources */,
 				C7783BBC27A56F6F008D364F /* AppDelegate.swift in Sources */,
 				C76CBCAC27A5BFF40046DF8F /* NetworkService.swift in Sources */,
 				C7770D1427A58DF0002D3552 /* PostFeedViewController.swift in Sources */,

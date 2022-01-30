@@ -8,7 +8,7 @@
 import UIKit
 
 class PostFeedViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [PostData]()
@@ -17,7 +17,6 @@ class PostFeedViewController: UIViewController {
         super.viewDidLoad()
         getPosts()
     }
-    
     
     private func getPosts() {
         let urlString = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/main.json"
@@ -38,6 +37,16 @@ class PostFeedViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postDetailSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                if let postDetailVC = segue.destination as? PostDetailViewController {
+                    postDetailVC.id = posts[indexPath.row].postID
+                }
+            }
+        }
+    }
 }
 
 extension PostFeedViewController: UITableViewDataSource, UITableViewDelegate {
@@ -51,5 +60,9 @@ extension PostFeedViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row]
         cell.configure(with: post)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "postDetailSegue", sender: nil)
     }
 }
