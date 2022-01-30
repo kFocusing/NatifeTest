@@ -16,6 +16,9 @@ class PostFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
+        
+        tableView.estimatedRowHeight = 128
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     
@@ -51,5 +54,5 @@ extension PostFeedViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row]
         cell.configure(with: post)
         return cell
-    }
+    } 
 }
