@@ -16,11 +16,13 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     func configure(with post: PostData) {
-        setupReadMore()
+//        textView.translatesAutoresizingMaskIntoConstraints = true
         titleLabel.text = post.title
         textView.text = post.previewText
         likesCountLabel.text = String(post.likesCount)
         dateLabel.text = post.timeshamp.timeshampToDateString()
+        setupReadMore()
+        
     }
     
     func setupReadMore() {
