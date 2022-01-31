@@ -7,12 +7,12 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - PostData -
 struct PostData: Codable {
     let posts: [PostModel]
 }
 
-// MARK: - Post
+// MARK: - PostModel -
 struct PostModel: Codable {
     let postID, timeshamp: Int
     let title, previewText: String

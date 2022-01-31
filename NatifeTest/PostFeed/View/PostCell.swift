@@ -8,12 +8,13 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var previewTextLabel: UILabel!
-    @IBOutlet weak var likesCountLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    //MARK: - IBOutlets -
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var previewTextLabel: UILabel!
+    @IBOutlet private weak var likesCountLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
+    //MARK: - Internal -
     func configure(with post: PostModel) {
         self.titleLabel.text = post.title
         self.previewTextLabel.text = post.previewText

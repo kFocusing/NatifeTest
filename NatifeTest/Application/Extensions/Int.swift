@@ -2,7 +2,7 @@
 //  Int.swift
 //  NatifeTest
 //
-//  Created by Danylo Klymov on 31.01.2022.
+//  Created by Danylo Klymov on 30.01.2022.
 //
 
 import Foundation
@@ -15,7 +15,6 @@ extension Int {
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "HH:mm  MM/dd/yyyy"
         let strDate = dateFormatter.string(from: date)
-        
         return strDate
     }
 }

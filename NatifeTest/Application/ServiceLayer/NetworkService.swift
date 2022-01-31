@@ -8,42 +8,18 @@
 import Foundation
 
 class NetworkService {
-    
+    //MARK: - Static -
     static let shared = NetworkService()
     
-    public func getData(url: URL, completion: @escaping (Result<[PostModel], Error>) -> Void) {
+    //MARK: - Internal -
+    func getData<T: Codable>(url: URL, expacting: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let session = URLSession.shared
         session.dataTask(with: url) { (data, _, error) in
             guard let data = data, error == nil else {
                 completion(.failure(NetworkingError.failResponseJSON))
                 return
             }
-            let post = self.parseJson(data)
-            completion(.success(post))
-        }.resume()
-    }
-    
-    
-    private func parseJson(_ data: Data) -> [PostModel] {
-        let decoder = JSONDecoder()
-        do {
-            let decodateData = try decoder.decode(PostData.self, from: data)
-            return decodateData.posts
-        } catch {
-            return []
-        }
-    }
-    
-    
-    // id
-    public func getDataID(url: URL, completion: @escaping (Result<DetailPostData, Error>) -> Void) {
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, _, error) in
-            guard let data = data, error == nil else {
-                completion(.failure(NetworkingError.failResponseJSON))
-                return
-            }
-            if let post = self.parseJsonID(data) {
+            if let post = self.parseJson(data, expacting: expacting) {
                 completion(.success(post))
             } else {
                 completion(.failure(NetworkingError.failParseJSON))
@@ -51,12 +27,12 @@ class NetworkService {
         }.resume()
     }
     
-    
-    private func parseJsonID(_ data: Data) -> DetailPostData? {
+    //MARK: - Private -
+    private func parseJson<T: Codable>(_ data: Data, expacting: T.Type) -> T? {
         let decoder = JSONDecoder()
         do {
-            let decodateData = try decoder.decode(RequestDetailPostData.self, from: data)
-            return decodateData.post
+            let decodateData = try decoder.decode(expacting, from: data)
+            return decodateData
         } catch {
             return nil
         }

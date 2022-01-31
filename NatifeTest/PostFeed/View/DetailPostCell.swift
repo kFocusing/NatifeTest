@@ -8,10 +8,11 @@
 import UIKit
 
 class DetailPostCell: UITableViewCell {
-
-    @IBOutlet weak var imageInto: UIImageView!
+    //MARK: - IBOutlet -
+    @IBOutlet private weak var imageInto: UIImageView!
     
-    func configure (imgData: Data) {
-        self.imageInto.image = UIImage(data: imgData)
+    //MARK: - Internal -
+    func configure (imageData: Data) {
+        self.imageInto.image = UIImage(data: imageData)
     }
 }
