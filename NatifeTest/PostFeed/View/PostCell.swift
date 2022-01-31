@@ -21,4 +21,3 @@ class PostCell: UITableViewCell {
         self.dateLabel.text = post.timeshamp.timeshampToDateString()
     }
 }
-
