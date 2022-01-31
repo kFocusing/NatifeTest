@@ -1,0 +1,16 @@
+PODS:
+  - ReadMoreTextView (3.0.1)
+
+DEPENDENCIES:
+  - ReadMoreTextView
+
+SPEC REPOS:
+  trunk:
+    - ReadMoreTextView
+
+SPEC CHECKSUMS:
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
+
+PODFILE CHECKSUM: ea3f65dc664bd51a76527feb966fc4891d94ba36
+
+COCOAPODS: 1.11.2
