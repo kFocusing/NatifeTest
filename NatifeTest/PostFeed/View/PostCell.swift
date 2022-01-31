@@ -14,6 +14,8 @@ class PostCell: UITableViewCell {
     @IBOutlet private weak var likesCountLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     
+    
+    
     //MARK: - Internal -
     func configure(with post: PostModel) {
         self.titleLabel.text = post.title
@@ -21,4 +23,4 @@ class PostCell: UITableViewCell {
         self.likesCountLabel.text = String(post.likesCount)
         self.dateLabel.text = post.timeshamp.timeshampToDateString()
     }
-}
+} 
