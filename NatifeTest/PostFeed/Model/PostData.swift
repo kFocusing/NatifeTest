@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - Welcome
-struct PostModel: Codable {
-    let posts: [PostData]
+struct PostData: Codable {
+    let posts: [PostModel]
 }
 
 // MARK: - Post
-struct PostData: Codable {
+struct PostModel: Codable {
     let postID, timeshamp: Int
     let title, previewText: String
     let likesCount: Int
