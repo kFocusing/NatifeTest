@@ -13,8 +13,19 @@ class PostDetailViewController: UIViewController {
     @IBOutlet private weak var textLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var likesCountLabel: UILabel!
-    @IBOutlet private weak var picturesTableView: UITableView!
-    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var placeholderView: UIView!
+    @IBOutlet private weak var heartImage: UIImageView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
+    //MARK: - UIElements -
+    private lazy var imageStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
     //MARK: - Variables -
     var id: Int!
@@ -25,10 +36,18 @@ class PostDetailViewController: UIViewController {
     //MARK: Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
+        startActivityIndicator()
+        addStackView()
+        addStackViewConstraints()
         getDetailData()
     }
     
     //MARK: - Private -
+    private func startActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+    }
+    
     private func getDetailData() {
         let idString = String(id)
         let urlString = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/posts/\(idString).json"
@@ -50,31 +69,35 @@ class PostDetailViewController: UIViewController {
             self.textLabel.text = detail.text
             self.dateLabel.text = detail.timeshamp.timeshampToDateString()
             self.likesCountLabel.text = String(detail.likesCount)
-            self.picturesTableView.reloadData()
+            self.renderImages()
+            self.heartImage.isHidden = false
+            self.activityIndicator.stopAnimating()
         }
     }
-}
-
-//MARK: - Extensions -
-//MARK: - UITableViewDataSource -
-extension PostDetailViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imagesString.count
+    
+    private func addStackView() {
+        placeholderView.addSubview(imageStackView)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pictureCell", for: indexPath) as! DetailPostCell
-        guard let imageURL = URL(string: imagesString[indexPath.row]) else { return cell }
-        setImageToCell(cell, imageURL: imageURL)
-        return cell
+    private func addStackViewConstraints() {
+        NSLayoutConstraint.activate([imageStackView.topAnchor.constraint(equalTo: placeholderView.topAnchor),
+                                     imageStackView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor),
+                                     imageStackView.leftAnchor.constraint(equalTo: placeholderView.leftAnchor),
+                                     imageStackView.rightAnchor.constraint(equalTo: placeholderView.rightAnchor)])
     }
     
-    private func setImageToCell(_ cell: DetailPostCell, imageURL: URL) {
-        do {
-            let imageData = try Data(contentsOf: imageURL)
-            cell.configure(imageData: imageData)
-        } catch let error as NSError {
-            print(error.localizedDescription)
+    private func addImageViewConstraints(imageView: UIImageView) {
+          NSLayoutConstraint.activate([imageView.heightAnchor.constraint(equalToConstant: 200)])
+    }
+    
+    private func renderImages() {
+        for path in imagesString {
+            guard let url = URL(string: path),
+                  let data = try? Data(contentsOf: url),
+                  let image = UIImage(data: data) else { return }
+            let imageView = UIImageView(image: image)
+            addImageViewConstraints(imageView: imageView)
+            imageStackView.addArrangedSubview(imageView)
         }
     }
 }

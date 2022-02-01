@@ -19,6 +19,8 @@ class PostFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     //MARK: - IBAction -
