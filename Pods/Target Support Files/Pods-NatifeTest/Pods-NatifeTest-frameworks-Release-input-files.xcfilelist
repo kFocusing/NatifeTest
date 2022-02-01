@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-NatifeTest/Pods-NatifeTest-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ExpandableLabel/ExpandableLabel.framework
+${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework

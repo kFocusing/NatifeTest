@@ -1,16 +1,20 @@
 PODS:
   - ExpandableLabel (0.5.2)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - ExpandableLabel
+  - TTTAttributedLabel
 
 SPEC REPOS:
   trunk:
     - ExpandableLabel
+    - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 7d438cbcbe913c3424ef4f6d23dc15613b396671
+PODFILE CHECKSUM: 26f5e234d7ec0a205966fa5a59ec3cad84e4eb1d
 
 COCOAPODS: 1.11.2

@@ -18,6 +18,7 @@
 		C7783BC527A56F70008D364F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7783BC427A56F70008D364F /* Assets.xcassets */; };
 		C7783BC827A56F70008D364F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7783BC627A56F70008D364F /* LaunchScreen.storyboard */; };
 		C7783BE227A574C9008D364F /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7783BE127A574C9008D364F /* PostData.swift */; };
+		C778538627A9E99800403A8F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778538527A9E99800403A8F /* UILabel.swift */; };
 		C77C303827A812E4002325FB /* DetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C303727A812E4002325FB /* DetailPostCell.swift */; };
 		C7A1809E27A6E273004B83CD /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */; };
 		C7E9207227A88C5D00EB3989 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E9207127A88C5D00EB3989 /* Int.swift */; };
@@ -38,6 +39,7 @@
 		C7783BC727A56F70008D364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7783BC927A56F70008D364F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7783BE127A574C9008D364F /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		C778538527A9E99800403A8F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		C77C303727A812E4002325FB /* DetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCell.swift; sourceTree = "<group>"; };
 		C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		C7E9207127A88C5D00EB3989 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 				BDD83D5EE8B962EFEC2C5F25 /* Pods-NatifeTest.debug.xcconfig */,
 				D98B0829C3F66D450143A25A /* Pods-NatifeTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -197,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E9207127A88C5D00EB3989 /* Int.swift */,
+				C778538527A9E99800403A8F /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +321,7 @@
 				C77C303827A812E4002325FB /* DetailPostCell.swift in Sources */,
 				C7783BE227A574C9008D364F /* PostData.swift in Sources */,
 				C7A1809E27A6E273004B83CD /* PostDetailViewController.swift in Sources */,
+				C778538627A9E99800403A8F /* UILabel.swift in Sources */,
 				C757D39E27A7437D00302954 /* DetailPostData.swift in Sources */,
 				C7783BBC27A56F6F008D364F /* AppDelegate.swift in Sources */,
 				C76CBCAC27A5BFF40046DF8F /* NetworkService.swift in Sources */,

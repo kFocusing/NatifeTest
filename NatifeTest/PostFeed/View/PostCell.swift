@@ -6,28 +6,27 @@
 //
 
 import UIKit
-import ExpandableLabel
 
 class PostCell: UITableViewCell {
     //MARK: - IBOutlets -
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var previewTextLabel: ExpandableLabel!
+    @IBOutlet private weak var previewTextLabel: UILabel!
     @IBOutlet private weak var likesCountLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     
-    
-    
     //MARK: - Internal -
     func configure(with post: PostModel) {
-        self.titleLabel.text = post.title
-        self.previewTextLabel.text = post.previewText
-        self.likesCountLabel.text = String(post.likesCount)
-        self.dateLabel.text = post.timeshamp.timeshampToDateString()
-        previewTextLabel.numberOfLines = 2
-        previewTextLabel.collapsed = true
-        previewTextLabel.collapsedAttributedLink = NSAttributedString(string: "Read More")
-        previewTextLabel.expandedAttributedLink = NSAttributedString(string: "Read Less")
-        previewTextLabel.setLessLinkWith(lessLink: "Close", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red], position: nil)
-        previewTextLabel.ellipsis = NSAttributedString(string: "...")
+        titleLabel.text = post.title
+        previewTextLabel.text = post.previewText
+        likesCountLabel.text = String(post.likesCount)
+        dateLabel.text = post.timeshamp.timeshampToDateString()
+        addReadMore()
     }
-} 
+    
+    //MARK: - Private -
+    private func addReadMore() {
+        let readmoreFont = UIFont(name: "Helvetica-BoldOblique", size: 14.0)
+        let readmoreFontColor = UIColor.black
+        self.previewTextLabel.addTrailing(with: "...", moreText: "READ MORE", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+    }
+}
