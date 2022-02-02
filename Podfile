@@ -6,6 +6,5 @@ target 'NatifeTest' do
   use_frameworks!
 
   pod "ExpandableLabel"
-  pod "TTTAttributedLabel"
 
 end

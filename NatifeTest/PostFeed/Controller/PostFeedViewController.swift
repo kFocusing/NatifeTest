@@ -83,6 +83,7 @@ extension PostFeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
         cell.configure(with: post)
+        cell.delegate = self
         return cell
     }
 }
@@ -95,4 +96,10 @@ extension PostFeedViewController: UITableViewDelegate {
     }
 }
 
-
+//MARK: - SizeCellDelegate -
+extension PostFeedViewController: SizeCellDelegate {
+    func didTap() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}

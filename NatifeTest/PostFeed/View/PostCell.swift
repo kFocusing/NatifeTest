@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import ExpandableLabel
+
+//MARK: - Protocol -
+protocol SizeCellDelegate: AnyObject {
+    func didTap()
+}
 
 class PostCell: UITableViewCell {
     //MARK: - IBOutlets -
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var previewTextLabel: UILabel!
+    @IBOutlet private weak var previewTextLabel: ExpandableLabel!
     @IBOutlet private weak var likesCountLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    
+    //MARK: - Variable -
+    weak var delegate: SizeCellDelegate?
     
     //MARK: - Internal -
     func configure(with post: PostModel) {
@@ -25,8 +34,30 @@ class PostCell: UITableViewCell {
     
     //MARK: - Private -
     private func addReadMore() {
-        let readmoreFont = UIFont(name: "Helvetica-BoldOblique", size: 14.0)
-        let readmoreFontColor = UIColor.black
-        self.previewTextLabel.addTrailing(with: "...", moreText: "READ MORE", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+        previewTextLabel.numberOfLines = 2
+        previewTextLabel.collapsed = true
+        previewTextLabel.collapsedAttributedLink = NSAttributedString(string: "Read More")
+        previewTextLabel.ellipsis = NSAttributedString(string: "...")
+        previewTextLabel.delegate = self
+    }
+}
+
+
+//MARK: - Extensions -
+//MARK: - ExpandableLabelDelegate -
+extension PostCell: ExpandableLabelDelegate {
+    func willExpandLabel(_ label: ExpandableLabel) {}
+    func willCollapseLabel(_ label: ExpandableLabel) {}
+    
+    func didExpandLabel(_ label: ExpandableLabel) {
+        setNeedsLayout()
+        layoutIfNeeded()
+        self.delegate?.didTap()
+    }
+    
+    func didCollapseLabel(_ label: ExpandableLabel) {
+        setNeedsLayout()
+        layoutIfNeeded()
+        self.delegate?.didTap()
     }
 }
