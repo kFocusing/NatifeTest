@@ -36,8 +36,6 @@ class PostCell: UITableViewCell {
     private func addReadMore() {
         previewTextLabel.numberOfLines = 2
         previewTextLabel.collapsed = true
-        previewTextLabel.collapsedAttributedLink = NSAttributedString(string: "Read More")
-        previewTextLabel.ellipsis = NSAttributedString(string: "...")
         previewTextLabel.delegate = self
     }
 }

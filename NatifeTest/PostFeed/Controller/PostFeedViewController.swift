@@ -20,6 +20,16 @@ class PostFeedViewController: UIViewController {
         getPosts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+    }
+    
     //MARK: - IBAction -
     @IBAction private func sortButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Choose type of sorting", message: nil, preferredStyle: .actionSheet)
@@ -101,4 +111,24 @@ extension PostFeedViewController: SizeCellDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+}
+
+struct AppUtility {
+
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = orientation
+        }
+    }
+
+    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+
+        self.lockOrientation(orientation)
+
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
+
 }
