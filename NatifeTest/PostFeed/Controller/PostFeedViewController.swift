@@ -20,16 +20,6 @@ class PostFeedViewController: UIViewController {
         getPosts()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
-    }
-    
     //MARK: - IBAction -
     @IBAction private func sortButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Choose type of sorting", message: nil, preferredStyle: .actionSheet)
