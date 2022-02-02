@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 // MARK: - RequestDetailPostData -
 struct RequestDetailPostData: Codable {
     let post: DetailPostData

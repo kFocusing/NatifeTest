@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 // MARK: - PostData -
 struct PostData: Codable {
     let posts: [PostModel]

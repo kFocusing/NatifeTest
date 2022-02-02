@@ -8,7 +8,6 @@
 import UIKit
 
 class PostFeedViewController: UIViewController {
-    
     //MARK: - IBOutlet -
     @IBOutlet private weak var tableView: UITableView!
     
