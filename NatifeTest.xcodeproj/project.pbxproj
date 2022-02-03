@@ -23,11 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C74A296927AC6A33002796B7 /* NatifeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatifeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757D39D27A7437D00302954 /* DetailPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostData.swift; sourceTree = "<group>"; };
 		C76CBCAB27A5BFF40046DF8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7770D0D27A588B4002D3552 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C7770D1327A58DF0002D3552 /* PostFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedViewController.swift; sourceTree = "<group>"; };
-		C7783BB827A56F6F008D364F /* NatifeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = NatifeTest.app; path = "/Users/klymov/Desktop/NatifeTest/build/Debug-iphoneos/NatifeTest.app"; sourceTree = "<absolute>"; };
 		C7783BBB27A56F6F008D364F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7783BBD27A56F6F008D364F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7783BC227A56F6F008D364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostFeed.storyboard; sourceTree = "<group>"; };
@@ -51,13 +51,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C74A296627AC6924002796B7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		C757D39F27A7446500302954 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C7783BBA27A56F6F008D364F /* NatifeTest */,
+				C74A296927AC6A33002796B7 /* NatifeTest.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				C7E9207027A8887900EB3989 /* Extensions */,
-				C74A296627AC6924002796B7 /* Model */,
 				C7783BD127A57147008D364F /* View */,
 				C7783BD027A57140008D364F /* Controller */,
 				C757D39F27A7446500302954 /* ServiceLayer */,
@@ -184,7 +177,7 @@
 			);
 			name = NatifeTest;
 			productName = NatifeTest;
-			productReference = C7783BB827A56F6F008D364F /* NatifeTest.app */;
+			productReference = C74A296927AC6A33002796B7 /* NatifeTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
