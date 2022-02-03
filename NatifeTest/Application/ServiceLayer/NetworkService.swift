@@ -16,13 +16,13 @@ class NetworkService {
         let session = URLSession.shared
         session.dataTask(with: url) { (data, _, error) in
             guard let data = data, error == nil else {
-                completion(.failure(NetworkingError.failResponseJSON))
+                completion(.failure(NetworkingError.failedResponseJSON))
                 return
             }
             if let post = self.parseJson(data, expacting: expacting) {
                 completion(.success(post))
             } else {
-                completion(.failure(NetworkingError.failParseJSON))
+                completion(.failure(NetworkingError.failedParseJSON))
             }
         }.resume()
     }
