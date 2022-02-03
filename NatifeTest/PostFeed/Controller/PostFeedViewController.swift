@@ -91,6 +91,7 @@ extension PostFeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
         cell.configure(with: post)
+        cell.delegate = self
         return cell
     }
 }
@@ -100,5 +101,13 @@ extension PostFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "postDetailSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+//MARK: - SizeCellDelegate -
+extension PostFeedViewController: SizeCellDelegate {
+    func didTap() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
