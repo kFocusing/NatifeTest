@@ -27,33 +27,6 @@ class PostCell: UITableViewCell {
         previewTextLabel.text = post.previewText
         likesCountLabel.text = String(post.likesCount)
         dateLabel.text = post.timeshamp.timeshampToDateString()
-//        addReadMore()
     }
     
-    //MARK: - Private -
-//    private func addReadMore() {
-//        previewTextLabel.numberOfLines = 2
-//        previewTextLabel.collapsed = true
-//        previewTextLabel.delegate = self
-//    }
 }
-
-
-//MARK: - Extensions -
-//MARK: - ExpandableLabelDelegate -
-//extension PostCell: ExpandableLabelDelegate {
-//    func willExpandLabel(_ label: ExpandableLabel) {}
-//    func willCollapseLabel(_ label: ExpandableLabel) {}
-//    
-//    func didExpandLabel(_ label: ExpandableLabel) {
-//        setNeedsLayout()
-//        layoutIfNeeded()
-//        self.delegate?.didTap()
-//    }
-//    
-//    func didCollapseLabel(_ label: ExpandableLabel) {
-//        setNeedsLayout()
-//        layoutIfNeeded()
-//        self.delegate?.didTap()
-//    }
-//}

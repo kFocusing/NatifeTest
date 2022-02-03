@@ -22,18 +22,27 @@ class PostFeedViewController: UIViewController {
     
     //MARK: - IBAction -
     @IBAction private func sortButtonPressed(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Choose type of sorting", message: nil, preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "Default", style: .default, handler: {_ in
-                    self.getPosts() }))
-                alert.addAction(UIAlertAction(title: "Date", style: .default, handler: {_ in
+        let alert = UIAlertController(title: "Choose type of sorting",
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Default",
+                                              style: .default,
+                                              handler: {_ in self.getPosts() }))
+                alert.addAction(UIAlertAction(title: "Date",
+                                              style: .default,
+                                              handler: {_ in
                     self.posts = self.posts.sorted(by: { $0.timeshamp > $1.timeshamp })
                     self.tableView.reloadData()
                 }))
-                alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: { _ in
+                alert.addAction(UIAlertAction(title: "Rating",
+                                              style: .default,
+                                              handler: { _ in
                     self.posts = self.posts.sorted(by: { $0.likesCount > $1.likesCount })
                     self.tableView.reloadData()
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel",
+                                              style: .cancel,
+                                              handler: nil))
                 
                 self.present(alert, animated: true, completion: nil)
     }
@@ -82,7 +91,6 @@ extension PostFeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
         cell.configure(with: post)
-        cell.delegate = self
         return cell
     }
 }
@@ -92,13 +100,5 @@ extension PostFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "postDetailSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-//MARK: - SizeCellDelegate -
-extension PostFeedViewController: SizeCellDelegate {
-    func didTap() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
     }
 }
