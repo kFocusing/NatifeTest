@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import ExpandableLabel
-
 //MARK: - Protocol -
 protocol SizeCellDelegate: AnyObject {
     func didTap()
@@ -16,7 +14,7 @@ protocol SizeCellDelegate: AnyObject {
 class PostCell: UITableViewCell {
     //MARK: - IBOutlets -
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var previewTextLabel: ExpandableLabel!
+    @IBOutlet private weak var previewTextLabel: UILabel!
     @IBOutlet private weak var likesCountLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     
@@ -29,33 +27,33 @@ class PostCell: UITableViewCell {
         previewTextLabel.text = post.previewText
         likesCountLabel.text = String(post.likesCount)
         dateLabel.text = post.timeshamp.timeshampToDateString()
-        addReadMore()
+//        addReadMore()
     }
     
     //MARK: - Private -
-    private func addReadMore() {
-        previewTextLabel.numberOfLines = 2
-        previewTextLabel.collapsed = true
-        previewTextLabel.delegate = self
-    }
+//    private func addReadMore() {
+//        previewTextLabel.numberOfLines = 2
+//        previewTextLabel.collapsed = true
+//        previewTextLabel.delegate = self
+//    }
 }
 
 
 //MARK: - Extensions -
 //MARK: - ExpandableLabelDelegate -
-extension PostCell: ExpandableLabelDelegate {
-    func willExpandLabel(_ label: ExpandableLabel) {}
-    func willCollapseLabel(_ label: ExpandableLabel) {}
-    
-    func didExpandLabel(_ label: ExpandableLabel) {
-        setNeedsLayout()
-        layoutIfNeeded()
-        self.delegate?.didTap()
-    }
-    
-    func didCollapseLabel(_ label: ExpandableLabel) {
-        setNeedsLayout()
-        layoutIfNeeded()
-        self.delegate?.didTap()
-    }
-}
+//extension PostCell: ExpandableLabelDelegate {
+//    func willExpandLabel(_ label: ExpandableLabel) {}
+//    func willCollapseLabel(_ label: ExpandableLabel) {}
+//    
+//    func didExpandLabel(_ label: ExpandableLabel) {
+//        setNeedsLayout()
+//        layoutIfNeeded()
+//        self.delegate?.didTap()
+//    }
+//    
+//    func didCollapseLabel(_ label: ExpandableLabel) {
+//        setNeedsLayout()
+//        layoutIfNeeded()
+//        self.delegate?.didTap()
+//    }
+//}

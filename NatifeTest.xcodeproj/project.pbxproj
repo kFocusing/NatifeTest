@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A798959C701D4EAE8B24A26 /* Pods_NatifeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08604B3441CD87B989A625E3 /* Pods_NatifeTest.framework */; };
 		C757D39E27A7437D00302954 /* DetailPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C757D39D27A7437D00302954 /* DetailPostData.swift */; };
 		C76CBCAC27A5BFF40046DF8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76CBCAB27A5BFF40046DF8F /* NetworkService.swift */; };
 		C7770D0E27A588B4002D3552 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7770D0D27A588B4002D3552 /* PostCell.swift */; };
@@ -24,13 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		08604B3441CD87B989A625E3 /* Pods_NatifeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NatifeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDD83D5EE8B962EFEC2C5F25 /* Pods-NatifeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NatifeTest.debug.xcconfig"; path = "Target Support Files/Pods-NatifeTest/Pods-NatifeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C757D39D27A7437D00302954 /* DetailPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostData.swift; sourceTree = "<group>"; };
 		C76CBCAB27A5BFF40046DF8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7770D0D27A588B4002D3552 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C7770D1327A58DF0002D3552 /* PostFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedViewController.swift; sourceTree = "<group>"; };
-		C7783BB827A56F6F008D364F /* NatifeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatifeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7783BB827A56F6F008D364F /* NatifeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = NatifeTest.app; path = "/Users/klymov/Desktop/NatifeTest/build/Debug-iphoneos/NatifeTest.app"; sourceTree = "<absolute>"; };
 		C7783BBB27A56F6F008D364F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7783BBD27A56F6F008D364F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7783BC227A56F6F008D364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostFeed.storyboard; sourceTree = "<group>"; };
@@ -41,7 +38,6 @@
 		C77C303727A812E4002325FB /* DetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCell.swift; sourceTree = "<group>"; };
 		C7A1809D27A6E273004B83CD /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		C7E9207127A88C5D00EB3989 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		D98B0829C3F66D450143A25A /* Pods-NatifeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NatifeTest.release.xcconfig"; path = "Target Support Files/Pods-NatifeTest/Pods-NatifeTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,28 +45,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A798959C701D4EAE8B24A26 /* Pods_NatifeTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8772D30AC0F598AFF5C4B609 /* Frameworks */ = {
+		C74A296627AC6924002796B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				08604B3441CD87B989A625E3 /* Pods_NatifeTest.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A8BEA27D219AFEBBE0C88029 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BDD83D5EE8B962EFEC2C5F25 /* Pods-NatifeTest.debug.xcconfig */,
-				D98B0829C3F66D450143A25A /* Pods-NatifeTest.release.xcconfig */,
-			);
-			path = Pods;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C757D39F27A7446500302954 /* ServiceLayer */ = {
@@ -85,18 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				C7783BBA27A56F6F008D364F /* NatifeTest */,
-				C7783BB927A56F6F008D364F /* Products */,
-				A8BEA27D219AFEBBE0C88029 /* Pods */,
-				8772D30AC0F598AFF5C4B609 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		C7783BB927A56F6F008D364F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C7783BB827A56F6F008D364F /* NatifeTest.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C7783BBA27A56F6F008D364F /* NatifeTest */ = {
@@ -113,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E9207027A8887900EB3989 /* Extensions */,
-				C7783BD227A5714E008D364F /* Model */,
+				C74A296627AC6924002796B7 /* Model */,
 				C7783BD127A57147008D364F /* View */,
 				C7783BD027A57140008D364F /* Controller */,
 				C757D39F27A7446500302954 /* ServiceLayer */,
@@ -136,13 +110,6 @@
 				C7783BC627A56F70008D364F /* LaunchScreen.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C7783BD227A5714E008D364F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C7783BD427A5727C008D364F /* PostFeed */ = {
@@ -207,11 +174,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7783BCC27A56F70008D364F /* Build configuration list for PBXNativeTarget "NatifeTest" */;
 			buildPhases = (
-				EBE4AF36A5B2B37E15F5329F /* [CP] Check Pods Manifest.lock */,
 				C7783BB427A56F6F008D364F /* Sources */,
 				C7783BB527A56F6F008D364F /* Frameworks */,
 				C7783BB627A56F6F008D364F /* Resources */,
-				AD6D69AD5EDCB66AF5B8ECC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,7 +211,7 @@
 				Base,
 			);
 			mainGroup = C7783BAF27A56F6F008D364F;
-			productRefGroup = C7783BB927A56F6F008D364F /* Products */;
+			productRefGroup = C7783BAF27A56F6F008D364F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -267,48 +232,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AD6D69AD5EDCB66AF5B8ECC8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NatifeTest/Pods-NatifeTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NatifeTest/Pods-NatifeTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NatifeTest/Pods-NatifeTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBE4AF36A5B2B37E15F5329F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NatifeTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7783BB427A56F6F008D364F /* Sources */ = {
@@ -468,7 +391,6 @@
 		};
 		C7783BCD27A56F70008D364F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDD83D5EE8B962EFEC2C5F25 /* Pods-NatifeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,7 +421,6 @@
 		};
 		C7783BCE27A56F70008D364F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D98B0829C3F66D450143A25A /* Pods-NatifeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
