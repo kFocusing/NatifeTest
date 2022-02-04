@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C743E79127AD6AB000CAC865 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743E79027AD6AB000CAC865 /* UILabel.swift */; };
 		C757D39E27A7437D00302954 /* DetailPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C757D39D27A7437D00302954 /* DetailPostData.swift */; };
 		C76CBCAC27A5BFF40046DF8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76CBCAB27A5BFF40046DF8F /* NetworkService.swift */; };
 		C7770D0E27A588B4002D3552 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7770D0D27A588B4002D3552 /* PostCell.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C743E79027AD6AB000CAC865 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		C74A296927AC6A33002796B7 /* NatifeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatifeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757D39D27A7437D00302954 /* DetailPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostData.swift; sourceTree = "<group>"; };
 		C76CBCAB27A5BFF40046DF8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E9207127A88C5D00EB3989 /* Int.swift */,
+				C743E79027AD6AB000CAC865 /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				C77C303827A812E4002325FB /* DetailPostCell.swift in Sources */,
 				C7783BE227A574C9008D364F /* PostData.swift in Sources */,
 				C7A1809E27A6E273004B83CD /* PostDetailViewController.swift in Sources */,
+				C743E79127AD6AB000CAC865 /* UILabel.swift in Sources */,
 				C757D39E27A7437D00302954 /* DetailPostData.swift in Sources */,
 				C7783BBC27A56F6F008D364F /* AppDelegate.swift in Sources */,
 				C76CBCAC27A5BFF40046DF8F /* NetworkService.swift in Sources */,

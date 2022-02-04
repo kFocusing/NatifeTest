@@ -13,9 +13,11 @@ struct PostData: Codable {
 
 // MARK: - PostModel -
 struct PostModel: Codable {
-    let postID, timeshamp: Int
+    var postID: Int
+    let timeshamp: Int
     let title, previewText: String
     let likesCount: Int
+    var isExpended: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case postID = "postId"

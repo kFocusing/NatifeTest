@@ -110,4 +110,8 @@ extension PostFeedViewController: SizeCellDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    func updateIsExpended( withID id: Int) {
+        guard let myPostIndex = posts.firstIndex(where: { post in post.postID == id }) else { return }
+        posts[myPostIndex].isExpended.toggle()
+    }
 }

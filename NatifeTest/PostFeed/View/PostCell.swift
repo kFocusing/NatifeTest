@@ -6,9 +6,11 @@
 //
 
 import UIKit
+
 //MARK: - Protocol -
 protocol SizeCellDelegate: AnyObject {
     func didTap()
+    func updateIsExpended(withID id: Int)
 }
 
 class PostCell: UITableViewCell {
@@ -21,41 +23,52 @@ class PostCell: UITableViewCell {
     
     //MARK: - Variable -
     weak var delegate: SizeCellDelegate?
+    private var post: PostModel?
+    private var id = Int()
     
     //MARK: - IBAction -
     @IBAction func readMorePressed(_ sender: Any) {
-        if readMoreButton.titleLabel?.text == "Читать далее..." {
+        guard var post = self.post, let delegate = delegate  else { return }
+        if post.isExpended {
+            post.isExpended = !post.isExpended
+            previewTextLabel.numberOfLines = 2
+            readMoreButton.setTitle("Читать далее...", for: .normal)
+            delegate.updateIsExpended(withID: post.postID)
+        } else {
+            post.isExpended = !post.isExpended
+            previewTextLabel.numberOfLines = 0
+            readMoreButton.setTitle("Свернуть текст", for: .normal)
+            delegate.updateIsExpended(withID: post.postID)
+        }
+        updateLayout()
+        self.post = post
+    }
+    
+    //MARK: - Internal -
+    func configure(with post: PostModel) {
+        self.post = post
+        titleLabel.text = post.title
+        previewTextLabel.text = post.previewText
+        likesCountLabel.text = String(post.likesCount)
+        dateLabel.text = post.timeshamp.timeshampToDateString()
+        configureExpandButton()
+    }
+    
+    //MARK: - Private -
+    private func configureExpandButton() {
+        guard let post = self.post else { return }
+        
+        
+        
+        if post.isExpended {
             previewTextLabel.numberOfLines = 0
             readMoreButton.setTitle("Свернуть текст", for: .normal)
         } else {
             previewTextLabel.numberOfLines = 2
             readMoreButton.setTitle("Читать далее...", for: .normal)
         }
-        updateLayout()
-    }
-    
-    //MARK: - Internal -
-    func configure(with post: PostModel) {
-        titleLabel.text = post.title
         previewTextLabel.text = post.previewText
-        likesCountLabel.text = String(post.likesCount)
-        dateLabel.text = post.timeshamp.timeshampToDateString()
-        setReadMoreButton(with: post.previewText)
-    }
-    
-    //MARK: - Private -
-    private func setReadMoreButton(with string: String) {
-        let frame = 6.28 * Double(string.count)
-        let constFrame = previewTextLabel.frame.width * 2
-        if frame > constFrame {
-            previewTextLabel.numberOfLines = 2
-            readMoreButton.isHidden = false
-        } else {
-            previewTextLabel.numberOfLines = 0
-            readMoreButton.isHidden = true
-            readMoreButton.frame.size = CGSize(width: 0, height: 0)
-        }
-        previewTextLabel.text = string
+        //        checkNeddedReadMoreButton()
     }
     
     private func updateLayout() {
@@ -64,3 +77,4 @@ class PostCell: UITableViewCell {
         self.delegate?.didTap()
     }
 }
+

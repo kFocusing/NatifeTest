@@ -78,7 +78,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqR-NI-SOd">
-                                                    <rect key="frame" x="239" y="87" width="155" height="6"/>
+                                                    <rect key="frame" x="195" y="87" width="199" height="6"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="3UG-L0-ODI"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="4" id="HIW-Hk-Iuv"/>
@@ -99,13 +99,13 @@
                                                 <constraint firstItem="K0H-zN-yaw" firstAttribute="trailing" secondItem="hTm-KQ-fal" secondAttribute="trailingMargin" id="55z-Zw-4bp"/>
                                                 <constraint firstItem="Xdl-5h-fy3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="asa-GW-4dh" secondAttribute="trailing" constant="8" symbolic="YES" id="75V-71-1Td"/>
                                                 <constraint firstItem="dqR-NI-SOd" firstAttribute="top" secondItem="K0H-zN-yaw" secondAttribute="bottom" id="Aoc-mw-KgX"/>
-                                                <constraint firstItem="Xdl-5h-fy3" firstAttribute="top" secondItem="dqR-NI-SOd" secondAttribute="bottom" id="Iei-61-I24"/>
+                                                <constraint firstItem="Xdl-5h-fy3" firstAttribute="top" secondItem="dqR-NI-SOd" secondAttribute="bottom" constant="5.5" id="Iei-61-I24"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="asa-GW-4dh" secondAttribute="bottom" id="MNL-V4-uV1"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xdl-5h-fy3" secondAttribute="bottom" id="Ovc-Of-etU"/>
                                                 <constraint firstAttribute="trailing" secondItem="dqR-NI-SOd" secondAttribute="trailing" constant="20" symbolic="YES" id="PkX-hI-nzN"/>
                                                 <constraint firstItem="K0H-zN-yaw" firstAttribute="leading" secondItem="hTm-KQ-fal" secondAttribute="leadingMargin" id="VP7-d7-f9P"/>
                                                 <constraint firstItem="nNv-u1-gOE" firstAttribute="leading" secondItem="hTm-KQ-fal" secondAttribute="leadingMargin" id="b1m-rE-at8"/>
-                                                <constraint firstItem="dqR-NI-SOd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hTm-KQ-fal" secondAttribute="leading" constant="239" id="fJW-3G-O9A"/>
+                                                <constraint firstItem="dqR-NI-SOd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hTm-KQ-fal" secondAttribute="leading" constant="195" id="fJW-3G-O9A"/>
                                                 <constraint firstItem="nNv-u1-gOE" firstAttribute="top" secondItem="hTm-KQ-fal" secondAttribute="topMargin" id="vBb-1M-moo"/>
                                                 <constraint firstItem="K0H-zN-yaw" firstAttribute="top" secondItem="nNv-u1-gOE" secondAttribute="bottom" constant="7.5" id="yPt-fL-We1"/>
                                             </constraints>
