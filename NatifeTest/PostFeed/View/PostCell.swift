@@ -57,9 +57,6 @@ class PostCell: UITableViewCell {
     //MARK: - Private -
     private func configureExpandButton() {
         guard let post = self.post else { return }
-        
-        
-        
         if post.isExpended {
             previewTextLabel.numberOfLines = 0
             readMoreButton.setTitle("Свернуть текст", for: .normal)
@@ -68,7 +65,11 @@ class PostCell: UITableViewCell {
             readMoreButton.setTitle("Читать далее...", for: .normal)
         }
         previewTextLabel.text = post.previewText
-        //        checkNeddedReadMoreButton()
+        readMoreButton.isHidden = checkNeddedReadMoreButton()
+    }
+    
+    private func checkNeddedReadMoreButton() -> Bool{
+        return previewTextLabel.maxNumberOfLines <= 2 ? true : false
     }
     
     private func updateLayout() {
@@ -77,4 +78,5 @@ class PostCell: UITableViewCell {
         self.delegate?.didTap()
     }
 }
+
 

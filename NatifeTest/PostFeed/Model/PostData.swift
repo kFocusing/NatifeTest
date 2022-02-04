@@ -15,7 +15,8 @@ struct PostData: Codable {
 struct PostModel: Codable {
     var postID: Int
     let timeshamp: Int
-    let title, previewText: String
+    let title: String
+    let previewText: String
     let likesCount: Int
     var isExpended: Bool = false
 

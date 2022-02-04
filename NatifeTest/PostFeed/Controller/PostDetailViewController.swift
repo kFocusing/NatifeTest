@@ -87,7 +87,7 @@ class PostDetailViewController: UIViewController {
     }
     
     private func addImageViewConstraints(imageView: UIImageView) {
-          NSLayoutConstraint.activate([imageView.heightAnchor.constraint(equalToConstant: 200)])
+        NSLayoutConstraint.activate([imageView.heightAnchor.constraint(equalToConstant: 200)])
     }
     
     private func renderImages() {
