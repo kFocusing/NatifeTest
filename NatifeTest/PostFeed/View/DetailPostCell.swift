@@ -9,10 +9,10 @@ import UIKit
 
 class DetailPostCell: UITableViewCell {
     //MARK: - IBOutlet -
-    @IBOutlet private weak var imageInto: UIImageView!
+    @IBOutlet private weak var imageIntoStackView: UIImageView!
     
     //MARK: - Internal -
     func configure (imageData: Data) {
-        self.imageInto.image = UIImage(data: imageData)
+        self.imageIntoStackView.image = UIImage(data: imageData)
     }
 }
