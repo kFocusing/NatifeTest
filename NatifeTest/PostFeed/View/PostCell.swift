@@ -69,7 +69,7 @@ class PostCell: UITableViewCell {
     }
     
     private func checkNeededReadMoreButton() -> Bool{
-        return previewTextLabel.maxNumberOfLines <= 2 ? true : false
+        return previewTextLabel.maxNumberOfLines <= 2
     }
     
     private func updateLayout() {
