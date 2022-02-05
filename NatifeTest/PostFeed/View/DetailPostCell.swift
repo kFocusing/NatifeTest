@@ -13,6 +13,6 @@ class DetailPostCell: UITableViewCell {
     
     //MARK: - Internal -
     func configure (imageData: Data) {
-        self.imageIntoStackView.image = UIImage(data: imageData)
+        imageIntoStackView.image = UIImage(data: imageData)
     }
 }

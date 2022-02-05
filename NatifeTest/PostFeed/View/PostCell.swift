@@ -65,17 +65,17 @@ class PostCell: UITableViewCell {
             readMoreButton.setTitle("Читать далее...", for: .normal)
         }
         previewTextLabel.text = post.previewText
-        readMoreButton.isHidden = checkNeddedReadMoreButton()
+        readMoreButton.isHidden = checkNeededReadMoreButton()
     }
     
-    private func checkNeddedReadMoreButton() -> Bool{
+    private func checkNeededReadMoreButton() -> Bool{
         return previewTextLabel.maxNumberOfLines <= 2 ? true : false
     }
     
     private func updateLayout() {
         setNeedsLayout()
         layoutIfNeeded()
-        self.delegate?.readMoreTapped()
+        delegate?.readMoreTapped()
     }
 }
 
