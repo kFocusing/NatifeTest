@@ -33,11 +33,11 @@ class PostDetailViewController: UIViewController {
     //MARK: - Private Variables -
     private var imagesString = [String]()
     
-    //MARK: Life Cicle
+    //MARK: - Life Cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         startActivityIndicator()
-        addStackView()
+        addImageStackView()
         addStackViewConstraints()
         getDetailData()
     }
@@ -63,19 +63,20 @@ class PostDetailViewController: UIViewController {
     }
     
     private func updateDetail(detail: DetailPostData) {
-        self.imagesString = detail.images!
+        guard let detailImages = detail.images else { return }
+        self.imagesString = detailImages
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
             self.titleLabel.text = detail.title
             self.textLabel.text = detail.text
             self.dateLabel.text = detail.timeshamp.timeshampToDateString()
             self.likesCountLabel.text = String(detail.likesCount)
             self.renderImages()
             self.heartImage.isHidden = false
-            self.activityIndicator.stopAnimating()
         }
     }
     
-    private func addStackView() {
+    private func addImageStackView() {
         placeholderView.addSubview(imageStackView)
     }
     

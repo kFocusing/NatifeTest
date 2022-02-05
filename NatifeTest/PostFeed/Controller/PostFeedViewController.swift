@@ -14,7 +14,7 @@ class PostFeedViewController: UIViewController {
     //MARK: - Variable -
     var posts = [PostModel]()
     
-    //MARK: - Life Cicle -
+    //MARK: - Life Cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
@@ -109,10 +109,11 @@ extension PostFeedViewController: UITableViewDelegate {
 
 //MARK: - SizeCellDelegate -
 extension PostFeedViewController: SizeCellDelegate {
-    func didTap() {
+    func readMoreTapped() {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
     func updateIsExpended( withID id: Int) {
         guard let myPostIndex = posts.firstIndex(where: { post in post.postID == id }) else { return }
         posts[myPostIndex].isExpended.toggle()

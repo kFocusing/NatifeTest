@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - Protocol -
 protocol SizeCellDelegate: AnyObject {
-    func didTap()
+    func readMoreTapped()
     func updateIsExpended(withID id: Int)
 }
 
@@ -75,7 +75,7 @@ class PostCell: UITableViewCell {
     private func updateLayout() {
         setNeedsLayout()
         layoutIfNeeded()
-        self.delegate?.didTap()
+        self.delegate?.readMoreTapped()
     }
 }
 
